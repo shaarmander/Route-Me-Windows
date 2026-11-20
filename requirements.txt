@@ -1,0 +1,2 @@
+-r requirements-forever.txt
+rapidocr-onnxruntime==1.4.4

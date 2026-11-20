@@ -1,0 +1,6 @@
+## Interface: 16001
+## Title: Wayfinder
+## Notes: Local position, heading and map viewport display.
+## Version: 4.0.1
+## SavedVariables: WayfinderOptions
+Wayfinder.lua

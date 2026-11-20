@@ -1,0 +1,324 @@
+[
+  {
+    "id": 36,
+    "name": "Alterac Mountains",
+    "file": "36.jpg",
+    "url": "https://classicdb.ch/images/maps/enus/zoom/36.jpg",
+    "source": "https://classicdb.ch/?zone=36"
+  },
+  {
+    "id": 45,
+    "name": "Arathi Highlands",
+    "file": "45.jpg",
+    "url": "https://classicdb.ch/images/maps/enus/zoom/45.jpg",
+    "source": "https://classicdb.ch/?zone=45"
+  },
+  {
+    "id": 3,
+    "name": "Badlands",
+    "file": "3.jpg",
+    "url": "https://classicdb.ch/images/maps/enus/zoom/3.jpg",
+    "source": "https://classicdb.ch/?zone=3"
+  },
+  {
+    "id": 4,
+    "name": "Blasted Lands",
+    "file": "4.jpg",
+    "url": "https://classicdb.ch/images/maps/enus/zoom/4.jpg",
+    "source": "https://classicdb.ch/?zone=4"
+  },
+  {
+    "id": 46,
+    "name": "Burning Steppes",
+    "file": "46.jpg",
+    "url": "https://classicdb.ch/images/maps/enus/zoom/46.jpg",
+    "source": "https://classicdb.ch/?zone=46"
+  },
+  {
+    "id": 41,
+    "name": "Deadwind Pass",
+    "file": "41.jpg",
+    "url": "https://classicdb.ch/images/maps/enus/zoom/41.jpg",
+    "source": "https://classicdb.ch/?zone=41"
+  },
+  {
+    "id": 1,
+    "name": "Dun Morogh",
+    "file": "1.jpg",
+    "url": "https://classicdb.ch/images/maps/enus/zoom/1.jpg",
+    "source": "https://classicdb.ch/?zone=1"
+  },
+  {
+    "id": 10,
+    "name": "Duskwood",
+    "file": "10.jpg",
+    "url": "https://classicdb.ch/images/maps/enus/zoom/10.jpg",
+    "source": "https://classicdb.ch/?zone=10"
+  },
+  {
+    "id": 139,
+    "name": "Eastern Plaguelands",
+    "file": "139.jpg",
+    "url": "https://classicdb.ch/images/maps/enus/zoom/139.jpg",
+    "source": "https://classicdb.ch/?zone=139"
+  },
+  {
+    "id": 12,
+    "name": "Elwynn Forest",
+    "file": "12.jpg",
+    "url": "https://classicdb.ch/images/maps/enus/zoom/12.jpg",
+    "source": "https://classicdb.ch/?zone=12"
+  },
+  {
+    "id": 267,
+    "name": "Hillsbrad Foothills",
+    "file": "267.jpg",
+    "url": "https://classicdb.ch/images/maps/enus/zoom/267.jpg",
+    "source": "https://classicdb.ch/?zone=267"
+  },
+  {
+    "id": 1537,
+    "name": "Ironforge",
+    "file": "1537.jpg",
+    "url": "https://classicdb.ch/images/maps/enus/zoom/1537.jpg",
+    "source": "https://classicdb.ch/?zone=1537"
+  },
+  {
+    "id": 38,
+    "name": "Loch Modan",
+    "file": "38.jpg",
+    "url": "https://classicdb.ch/images/maps/enus/zoom/38.jpg",
+    "source": "https://classicdb.ch/?zone=38"
+  },
+  {
+    "id": 44,
+    "name": "Redridge Mountains",
+    "file": "44.jpg",
+    "url": "https://classicdb.ch/images/maps/enus/zoom/44.jpg",
+    "source": "https://classicdb.ch/?zone=44"
+  },
+  {
+    "id": 51,
+    "name": "Searing Gorge",
+    "file": "51.jpg",
+    "url": "https://classicdb.ch/images/maps/enus/zoom/51.jpg",
+    "source": "https://classicdb.ch/?zone=51"
+  },
+  {
+    "id": 130,
+    "name": "Silverpine Forest",
+    "file": "130.jpg",
+    "url": "https://classicdb.ch/images/maps/enus/zoom/130.jpg",
+    "source": "https://classicdb.ch/?zone=130"
+  },
+  {
+    "id": 1519,
+    "name": "Stormwind City",
+    "file": "1519.jpg",
+    "url": "https://classicdb.ch/images/maps/enus/zoom/1519.jpg",
+    "source": "https://classicdb.ch/?zone=1519"
+  },
+  {
+    "id": 33,
+    "name": "Stranglethorn Vale",
+    "file": "33.jpg",
+    "url": "https://classicdb.ch/images/maps/enus/zoom/33.jpg",
+    "source": "https://classicdb.ch/?zone=33"
+  },
+  {
+    "id": 8,
+    "name": "Swamp of Sorrows",
+    "file": "8.jpg",
+    "url": "https://classicdb.ch/images/maps/enus/zoom/8.jpg",
+    "source": "https://classicdb.ch/?zone=8"
+  },
+  {
+    "id": 47,
+    "name": "The Hinterlands",
+    "file": "47.jpg",
+    "url": "https://classicdb.ch/images/maps/enus/zoom/47.jpg",
+    "source": "https://classicdb.ch/?zone=47"
+  },
+  {
+    "id": 85,
+    "name": "Tirisfal Glades",
+    "file": "85.jpg",
+    "url": "https://classicdb.ch/images/maps/enus/zoom/85.jpg",
+    "source": "https://classicdb.ch/?zone=85"
+  },
+  {
+    "id": 1497,
+    "name": "Undercity",
+    "file": "1497.jpg",
+    "url": "https://classicdb.ch/images/maps/enus/zoom/1497.jpg",
+    "source": "https://classicdb.ch/?zone=1497"
+  },
+  {
+    "id": 28,
+    "name": "Western Plaguelands",
+    "file": "28.jpg",
+    "url": "https://classicdb.ch/images/maps/enus/zoom/28.jpg",
+    "source": "https://classicdb.ch/?zone=28"
+  },
+  {
+    "id": 40,
+    "name": "Westfall",
+    "file": "40.jpg",
+    "url": "https://classicdb.ch/images/maps/enus/zoom/40.jpg",
+    "source": "https://classicdb.ch/?zone=40"
+  },
+  {
+    "id": 11,
+    "name": "Wetlands",
+    "file": "11.jpg",
+    "url": "https://classicdb.ch/images/maps/enus/zoom/11.jpg",
+    "source": "https://classicdb.ch/?zone=11"
+  },
+  {
+    "id": 331,
+    "name": "Ashenvale",
+    "file": "331.jpg",
+    "url": "https://classicdb.ch/images/maps/enus/zoom/331.jpg",
+    "source": "https://classicdb.ch/?zone=331"
+  },
+  {
+    "id": 16,
+    "name": "Azshara",
+    "file": "16.jpg",
+    "url": "https://classicdb.ch/images/maps/enus/zoom/16.jpg",
+    "source": "https://classicdb.ch/?zone=16"
+  },
+  {
+    "id": 148,
+    "name": "Darkshore",
+    "file": "148.jpg",
+    "url": "https://classicdb.ch/images/maps/enus/zoom/148.jpg",
+    "source": "https://classicdb.ch/?zone=148"
+  },
+  {
+    "id": 1657,
+    "name": "Darnassus",
+    "file": "1657.jpg",
+    "url": "https://classicdb.ch/images/maps/enus/zoom/1657.jpg",
+    "source": "https://classicdb.ch/?zone=1657"
+  },
+  {
+    "id": 405,
+    "name": "Desolace",
+    "file": "405.jpg",
+    "url": "https://classicdb.ch/images/maps/enus/zoom/405.jpg",
+    "source": "https://classicdb.ch/?zone=405"
+  },
+  {
+    "id": 14,
+    "name": "Durotar",
+    "file": "14.jpg",
+    "url": "https://classicdb.ch/images/maps/enus/zoom/14.jpg",
+    "source": "https://classicdb.ch/?zone=14"
+  },
+  {
+    "id": 15,
+    "name": "Dustwallow Marsh",
+    "file": "15.jpg",
+    "url": "https://classicdb.ch/images/maps/enus/zoom/15.jpg",
+    "source": "https://classicdb.ch/?zone=15"
+  },
+  {
+    "id": 361,
+    "name": "Felwood",
+    "file": "361.jpg",
+    "url": "https://classicdb.ch/images/maps/enus/zoom/361.jpg",
+    "source": "https://classicdb.ch/?zone=361"
+  },
+  {
+    "id": 357,
+    "name": "Feralas",
+    "file": "357.jpg",
+    "url": "https://classicdb.ch/images/maps/enus/zoom/357.jpg",
+    "source": "https://classicdb.ch/?zone=357"
+  },
+  {
+    "id": 493,
+    "name": "Moonglade",
+    "file": "493.jpg",
+    "url": "https://classicdb.ch/images/maps/enus/zoom/493.jpg",
+    "source": "https://classicdb.ch/?zone=493"
+  },
+  {
+    "id": 215,
+    "name": "Mulgore",
+    "file": "215.jpg",
+    "url": "https://classicdb.ch/images/maps/enus/zoom/215.jpg",
+    "source": "https://classicdb.ch/?zone=215"
+  },
+  {
+    "id": 1637,
+    "name": "Orgrimmar",
+    "file": "1637.jpg",
+    "url": "https://classicdb.ch/images/maps/enus/zoom/1637.jpg",
+    "source": "https://classicdb.ch/?zone=1637"
+  },
+  {
+    "id": 1377,
+    "name": "Silithus",
+    "file": "1377.jpg",
+    "url": "https://classicdb.ch/images/maps/enus/zoom/1377.jpg",
+    "source": "https://classicdb.ch/?zone=1377"
+  },
+  {
+    "id": 406,
+    "name": "Stonetalon Mountains",
+    "file": "406.jpg",
+    "url": "https://classicdb.ch/images/maps/enus/zoom/406.jpg",
+    "source": "https://classicdb.ch/?zone=406"
+  },
+  {
+    "id": 440,
+    "name": "Tanaris",
+    "file": "440.jpg",
+    "url": "https://classicdb.ch/images/maps/enus/zoom/440.jpg",
+    "source": "https://classicdb.ch/?zone=440"
+  },
+  {
+    "id": 141,
+    "name": "Teldrassil",
+    "file": "141.jpg",
+    "url": "https://classicdb.ch/images/maps/enus/zoom/141.jpg",
+    "source": "https://classicdb.ch/?zone=141"
+  },
+  {
+    "id": 17,
+    "name": "The Barrens",
+    "file": "17.jpg",
+    "url": "https://classicdb.ch/images/maps/enus/zoom/17.jpg",
+    "source": "https://classicdb.ch/?zone=17"
+  },
+  {
+    "id": 400,
+    "name": "Thousand Needles",
+    "file": "400.jpg",
+    "url": "https://classicdb.ch/images/maps/enus/zoom/400.jpg",
+    "source": "https://classicdb.ch/?zone=400"
+  },
+  {
+    "id": 1638,
+    "name": "Thunder Bluff",
+    "file": "1638.jpg",
+    "url": "https://classicdb.ch/images/maps/enus/zoom/1638.jpg",
+    "source": "https://classicdb.ch/?zone=1638"
+  },
+  {
+    "id": 490,
+    "name": "Un'Goro Crater",
+    "file": "490.jpg",
+    "url": "https://classicdb.ch/images/maps/enus/zoom/490.jpg",
+    "source": "https://classicdb.ch/?zone=490"
+  },
+  {
+    "id": 618,
+    "name": "Winterspring",
+    "file": "618.jpg",
+    "url": "https://classicdb.ch/images/maps/enus/zoom/618.jpg",
+    "source": "https://classicdb.ch/?zone=618"
+  }
+]

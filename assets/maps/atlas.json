@@ -1,0 +1,585 @@
+{
+  "version": 1,
+  "continents": {
+    "1": {
+      "id": 0,
+      "continent": 1,
+      "texture": "Kalimdor",
+      "bounds": [
+        17066.599609375,
+        -19733.2109375,
+        12799.900390625,
+        -11733.2998046875
+      ],
+      "name": "Kalimdor",
+      "file": "Kalimdor.jpg"
+    },
+    "0": {
+      "id": 0,
+      "continent": 0,
+      "texture": "Azeroth",
+      "bounds": [
+        16000.0,
+        -19199.900390625,
+        7466.60009765625,
+        -16000.0
+      ],
+      "name": "Eastern Kingdoms",
+      "file": "Azeroth.jpg"
+    }
+  },
+  "zones": {
+    "14": {
+      "id": 14,
+      "continent": 1,
+      "texture": "Durotar",
+      "bounds": [
+        -1962.4998779296875,
+        -7249.99951171875,
+        1808.333251953125,
+        -1716.6666259765625
+      ],
+      "highlight": "highlights/14.png"
+    },
+    "215": {
+      "id": 215,
+      "continent": 1,
+      "texture": "Mulgore",
+      "bounds": [
+        2047.9166259765625,
+        -3089.583251953125,
+        -272.9166564941406,
+        -3697.91650390625
+      ],
+      "highlight": "highlights/215.png"
+    },
+    "17": {
+      "id": 17,
+      "continent": 1,
+      "texture": "Barrens",
+      "bounds": [
+        2622.91650390625,
+        -7510.41650390625,
+        1612.4998779296875,
+        -5143.75
+      ],
+      "highlight": "highlights/17.png"
+    },
+    "36": {
+      "id": 36,
+      "continent": 0,
+      "texture": "Alterac",
+      "bounds": [
+        783.3333129882812,
+        -2016.6666259765625,
+        1500.0,
+        -366.6666564941406
+      ],
+      "highlight": "highlights/36.png"
+    },
+    "45": {
+      "id": 45,
+      "continent": 0,
+      "texture": "Arathi",
+      "bounds": [
+        -866.6666259765625,
+        -4466.66650390625,
+        -133.3333282470703,
+        -2533.333251953125
+      ],
+      "highlight": "highlights/45.png"
+    },
+    "3": {
+      "id": 3,
+      "continent": 0,
+      "texture": "Badlands",
+      "bounds": [
+        -2079.16650390625,
+        -4566.66650390625,
+        -5889.5830078125,
+        -7547.91650390625
+      ],
+      "highlight": "highlights/3.png"
+    },
+    "4": {
+      "id": 4,
+      "continent": 0,
+      "texture": "BlastedLands",
+      "bounds": [
+        -1241.6666259765625,
+        -4591.66650390625,
+        -10566.666015625,
+        -12800.0
+      ],
+      "highlight": "highlights/4.png"
+    },
+    "85": {
+      "id": 85,
+      "continent": 0,
+      "texture": "Tirisfal",
+      "bounds": [
+        3033.333251953125,
+        -1485.4166259765625,
+        3837.499755859375,
+        824.9999389648438
+      ],
+      "highlight": "highlights/85.png"
+    },
+    "130": {
+      "id": 130,
+      "continent": 0,
+      "texture": "Silverpine",
+      "bounds": [
+        3449.999755859375,
+        -750.0,
+        1666.6666259765625,
+        -1133.333251953125
+      ],
+      "highlight": "highlights/130.png"
+    },
+    "28": {
+      "id": 28,
+      "continent": 0,
+      "texture": "WesternPlaguelands",
+      "bounds": [
+        416.6666564941406,
+        -3883.333251953125,
+        3366.66650390625,
+        499.9999694824219
+      ],
+      "highlight": "highlights/28.png"
+    },
+    "139": {
+      "id": 139,
+      "continent": 0,
+      "texture": "EasternPlaguelands",
+      "bounds": [
+        -2185.41650390625,
+        -6056.25,
+        3799.999755859375,
+        1218.75
+      ],
+      "highlight": "highlights/139.png"
+    },
+    "267": {
+      "id": 267,
+      "continent": 0,
+      "texture": "Hilsbrad",
+      "bounds": [
+        1066.6666259765625,
+        -2133.333251953125,
+        400.0,
+        -1733.333251953125
+      ],
+      "highlight": "highlights/267.png"
+    },
+    "47": {
+      "id": 47,
+      "continent": 0,
+      "texture": "Hinterlands",
+      "bounds": [
+        -1575.0,
+        -5425.0,
+        1466.6666259765625,
+        -1100.0
+      ],
+      "highlight": "highlights/47.png"
+    },
+    "1": {
+      "id": 1,
+      "continent": 0,
+      "texture": "DunMorogh",
+      "bounds": [
+        1802.083251953125,
+        -3122.91650390625,
+        -3877.083251953125,
+        -7160.41650390625
+      ],
+      "highlight": "highlights/1.png"
+    },
+    "51": {
+      "id": 51,
+      "continent": 0,
+      "texture": "SearingGorge",
+      "bounds": [
+        -322.9166564941406,
+        -2554.16650390625,
+        -6100.0,
+        -7587.49951171875
+      ],
+      "highlight": "highlights/51.png"
+    },
+    "46": {
+      "id": 46,
+      "continent": 0,
+      "texture": "BurningSteppes",
+      "bounds": [
+        -266.6666564941406,
+        -3195.833251953125,
+        -7031.24951171875,
+        -8983.3330078125
+      ],
+      "highlight": "highlights/46.png"
+    },
+    "12": {
+      "id": 12,
+      "continent": 0,
+      "texture": "Elwynn",
+      "bounds": [
+        1535.4166259765625,
+        -1935.4166259765625,
+        -7939.5830078125,
+        -10254.166015625
+      ],
+      "highlight": "highlights/12.png"
+    },
+    "41": {
+      "id": 41,
+      "continent": 0,
+      "texture": "DeadwindPass",
+      "bounds": [
+        -833.3333129882812,
+        -3333.333251953125,
+        -9866.666015625,
+        -11533.3330078125
+      ],
+      "highlight": "highlights/41.png"
+    },
+    "10": {
+      "id": 10,
+      "continent": 0,
+      "texture": "Duskwood",
+      "bounds": [
+        833.3333129882812,
+        -1866.6666259765625,
+        -9716.666015625,
+        -11516.666015625
+      ],
+      "highlight": "highlights/10.png"
+    },
+    "38": {
+      "id": 38,
+      "continent": 0,
+      "texture": "LochModan",
+      "bounds": [
+        -1993.7498779296875,
+        -4752.0830078125,
+        -4487.5,
+        -6327.0830078125
+      ],
+      "highlight": "highlights/38.png"
+    },
+    "44": {
+      "id": 44,
+      "continent": 0,
+      "texture": "Redridge",
+      "bounds": [
+        -1570.833251953125,
+        -3741.66650390625,
+        -8575.0,
+        -10022.916015625
+      ],
+      "highlight": "highlights/44.png"
+    },
+    "33": {
+      "id": 33,
+      "continent": 0,
+      "texture": "Stranglethorn",
+      "bounds": [
+        2220.833251953125,
+        -4160.41650390625,
+        -11168.75,
+        -15422.916015625
+      ],
+      "highlight": "highlights/33.png"
+    },
+    "8": {
+      "id": 8,
+      "continent": 0,
+      "texture": "SwampOfSorrows",
+      "bounds": [
+        -2222.91650390625,
+        -4516.66650390625,
+        -9620.8330078125,
+        -11150.0
+      ],
+      "highlight": "highlights/8.png"
+    },
+    "40": {
+      "id": 40,
+      "continent": 0,
+      "texture": "Westfall",
+      "bounds": [
+        3016.66650390625,
+        -483.33331298828125,
+        -9400.0,
+        -11733.3330078125
+      ],
+      "highlight": "highlights/40.png"
+    },
+    "11": {
+      "id": 11,
+      "continent": 0,
+      "texture": "Wetlands",
+      "bounds": [
+        -389.58331298828125,
+        -4525.0,
+        -2147.91650390625,
+        -4904.16650390625
+      ],
+      "highlight": "highlights/11.png"
+    },
+    "141": {
+      "id": 141,
+      "continent": 1,
+      "texture": "Teldrassil",
+      "bounds": [
+        3814.583251953125,
+        -1277.083251953125,
+        11831.25,
+        8437.5
+      ],
+      "highlight": "highlights/141.png"
+    },
+    "148": {
+      "id": 148,
+      "continent": 1,
+      "texture": "Darkshore",
+      "bounds": [
+        2941.66650390625,
+        -3608.333251953125,
+        8333.3330078125,
+        3966.66650390625
+      ],
+      "highlight": "highlights/148.png"
+    },
+    "331": {
+      "id": 331,
+      "continent": 1,
+      "texture": "Ashenvale",
+      "bounds": [
+        1699.9998779296875,
+        -4066.66650390625,
+        4672.91650390625,
+        829.1666259765625
+      ],
+      "highlight": "highlights/331.png"
+    },
+    "400": {
+      "id": 400,
+      "continent": 1,
+      "texture": "ThousandNeedles",
+      "bounds": [
+        -433.33331298828125,
+        -4833.3330078125,
+        -3966.66650390625,
+        -6899.99951171875
+      ],
+      "highlight": "highlights/400.png"
+    },
+    "406": {
+      "id": 406,
+      "continent": 1,
+      "texture": "StonetalonMountains",
+      "bounds": [
+        3245.833251953125,
+        -1637.4998779296875,
+        2916.66650390625,
+        -339.58331298828125
+      ],
+      "highlight": "highlights/406.png"
+    },
+    "405": {
+      "id": 405,
+      "continent": 1,
+      "texture": "Desolace",
+      "bounds": [
+        4233.3330078125,
+        -262.5,
+        452.08331298828125,
+        -2545.833251953125
+      ],
+      "highlight": "highlights/405.png"
+    },
+    "357": {
+      "id": 357,
+      "continent": 1,
+      "texture": "Feralas",
+      "bounds": [
+        5441.66650390625,
+        -1508.333251953125,
+        -2366.66650390625,
+        -6999.99951171875
+      ],
+      "highlight": "highlights/357.png"
+    },
+    "15": {
+      "id": 15,
+      "continent": 1,
+      "texture": "Dustwallow",
+      "bounds": [
+        -974.9999389648438,
+        -6225.0,
+        -2033.333251953125,
+        -5533.3330078125
+      ],
+      "highlight": "highlights/15.png"
+    },
+    "440": {
+      "id": 440,
+      "continent": 1,
+      "texture": "Tanaris",
+      "bounds": [
+        -218.74998474121094,
+        -7118.74951171875,
+        -5875.0,
+        -10475.0
+      ],
+      "highlight": "highlights/440.png"
+    },
+    "16": {
+      "id": 16,
+      "continent": 1,
+      "texture": "Aszhara",
+      "bounds": [
+        -3277.083251953125,
+        -8347.916015625,
+        5341.66650390625,
+        1960.4166259765625
+      ],
+      "highlight": "highlights/16.png"
+    },
+    "361": {
+      "id": 361,
+      "continent": 1,
+      "texture": "Felwood",
+      "bounds": [
+        1641.6666259765625,
+        -4108.3330078125,
+        7133.3330078125,
+        3299.999755859375
+      ],
+      "highlight": "highlights/361.png"
+    },
+    "490": {
+      "id": 490,
+      "continent": 1,
+      "texture": "UngoroCrater",
+      "bounds": [
+        533.3333129882812,
+        -3166.66650390625,
+        -5966.66650390625,
+        -8433.3330078125
+      ],
+      "highlight": "highlights/490.png"
+    },
+    "493": {
+      "id": 493,
+      "continent": 1,
+      "texture": "Moonglade",
+      "bounds": [
+        -1381.25,
+        -3689.583251953125,
+        8491.666015625,
+        6952.0830078125
+      ],
+      "highlight": "highlights/493.png"
+    },
+    "1377": {
+      "id": 1377,
+      "continent": 1,
+      "texture": "Silithus",
+      "bounds": [
+        2537.5,
+        -945.833984375,
+        -5958.333984375,
+        -8281.25
+      ],
+      "highlight": "highlights/1377.png"
+    },
+    "618": {
+      "id": 618,
+      "continent": 1,
+      "texture": "Winterspring",
+      "bounds": [
+        -316.6666564941406,
+        -7416.66650390625,
+        8533.3330078125,
+        3799.999755859375
+      ],
+      "highlight": "highlights/618.png"
+    },
+    "1519": {
+      "id": 1519,
+      "continent": 0,
+      "texture": "Stormwind",
+      "bounds": [
+        1380.971435546875,
+        36.70063018798828,
+        -8278.8505859375,
+        -9175.205078125
+      ],
+      "highlight": "highlights/1519.png"
+    },
+    "1637": {
+      "id": 1637,
+      "continent": 1,
+      "texture": "Ogrimmar",
+      "bounds": [
+        -3680.60107421875,
+        -5083.20556640625,
+        2273.877197265625,
+        1338.4605712890625
+      ],
+      "highlight": "highlights/1637.png"
+    },
+    "1537": {
+      "id": 1537,
+      "continent": 0,
+      "texture": "Ironforge",
+      "bounds": [
+        -713.5913696289062,
+        -1504.2164306640625,
+        -4569.2412109375,
+        -5096.845703125
+      ],
+      "highlight": "highlights/1537.png"
+    },
+    "1638": {
+      "id": 1638,
+      "continent": 1,
+      "texture": "ThunderBluff",
+      "bounds": [
+        516.6666259765625,
+        -527.0833129882812,
+        -849.9999389648438,
+        -1545.833251953125
+      ],
+      "highlight": "highlights/1638.png"
+    },
+    "1657": {
+      "id": 1657,
+      "continent": 1,
+      "texture": "Darnassis",
+      "bounds": [
+        2938.36279296875,
+        1880.029541015625,
+        10238.31640625,
+        9532.5869140625
+      ],
+      "highlight": "highlights/1657.png"
+    },
+    "1497": {
+      "id": 1497,
+      "continent": 0,
+      "texture": "Undercity",
+      "bounds": [
+        873.192626953125,
+        -86.18240356445312,
+        1877.9453125,
+        1237.8411865234375
+      ],
+      "highlight": "highlights/1497.png"
+    }
+  }
+}
