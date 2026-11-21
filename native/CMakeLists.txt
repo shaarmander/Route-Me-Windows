@@ -1,0 +1,13 @@
+cmake_minimum_required(VERSION 3.20)
+project(route_nav LANGUAGES CXX)
+if(NOT EXISTS "${DETOUR_ROOT}/Include/DetourNavMesh.h")
+  message(FATAL_ERROR "Set DETOUR_ROOT to the matching WorldForge/CMaNGOS Detour directory")
+endif()
+file(GLOB DETOUR_SOURCES "${DETOUR_ROOT}/Source/*.cpp")
+add_library(route_nav SHARED route_nav.cpp ${DETOUR_SOURCES})
+# Versioned ABI permits rebuilding while an older app holds its DLL open.
+set_target_properties(route_nav PROPERTIES OUTPUT_NAME route_nav_3)
+target_include_directories(route_nav PRIVATE "${DETOUR_ROOT}/Include")
+target_compile_features(route_nav PRIVATE cxx_std_17)
+target_compile_definitions(route_nav PRIVATE DT_POLYREF64)
+set_property(TARGET route_nav PROPERTY MSVC_RUNTIME_LIBRARY "MultiThreaded$<$<CONFIG:Debug>:Debug>")

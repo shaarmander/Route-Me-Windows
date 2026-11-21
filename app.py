@@ -34,7 +34,7 @@ from road_curves import flatten
 from atlas import Atlas
 from atlas_browser import AtlasBrowser
 from continent_routing import ContinentTracker, ContinentNavigation, plan_continent_route
-from map_profiles import available_catalogs, label as map_profile_label, startup_catalog, remember_catalog
+from map_profiles import available_catalogs, classic_catalog, has_classic_install, label as map_profile_label, startup_catalog, remember_catalog
 from profile_navigation import load_zone_navigation
 from overlay_maps import client_maps, road_data, map_destination
 from desktop_overlay import PanelReader, FreshViewport, MapViewport, RoadOverlay
@@ -91,7 +91,7 @@ class App:
         self.reconnect_route = None
         self.reconnect_destination = None
         if self.catalog.profile:
-            legacy=Atlas(MapCatalog(root=Path(__file__).resolve().parent/'assets/maps'))
+            legacy=Atlas(classic_catalog())
             self.road_store=RoadStore(self.catalog.root/'roads-world',self.atlas.transform,legacy.transform,self.catalog.profile['profile_id'])
         else:
             self.road_store = RoadStore()
@@ -386,7 +386,7 @@ class App:
             zone_id=self.zone_id if self.zone_id in catalog.by_id else 44
             catalog.image(zone_id)  # Verify the destination map before changing state.
             if catalog.profile:
-                legacy=Atlas(MapCatalog())
+                legacy=Atlas(classic_catalog())
                 store=RoadStore(catalog.root/'roads-world',atlas.transform,legacy.transform,catalog.profile['profile_id'])
             else:
                 store=RoadStore()
@@ -456,6 +456,9 @@ class App:
             return
         # Retain the vertices the user chose; route planning handles corners.
         self.planned = None
+        if self.classic_preview_available():
+            self.start_classic_preview()
+            return
         if self.addon_map_id:
             try:
                 if self.navigation is None:
@@ -473,6 +476,38 @@ class App:
             return
         self.status.set('Route ready. Corners curve automatically. Check the displayed line, then Start route.')
         self.render()
+
+    def classic_preview_available(self):
+        return (has_classic_install(self.catalog) and self.region is None and self.plan_image is not None
+                and self.plan_image is self.reference
+                and self.zone_id in self.atlas.zones and not self.addon_map_id)
+
+    def start_classic_preview(self):
+        self.navigation = None
+        self.stop.clear()
+        self.preparing = True
+        self.status.set('Checking the drawn trip against the Classic navigation mesh…')
+        for button in self.buttons+[self.preview_button,self.run_button]:
+            button.configure(state='disabled')
+        self.render()
+        self.thread=threading.Thread(target=self.work_classic_preview,
+                                    args=(self.zone_id,self.plan_image.shape,list(self.points)),daemon=True)
+        self.thread.start()
+
+    def work_classic_preview(self, zone_id, shape, points):
+        navigation=None
+        try:
+            navigation=ZoneNavigation.load(zone_id,shape,self.stop)
+            route=navigation.plan_from_map(points)
+            if self.stop.is_set():
+                self.emit('done','Classic preview cancelled.')
+                return
+            self.emit('classic_preview',navigation,route)
+            self.emit('done','Classic collision preview ready. Cyan is the checked path.')
+        except (OSError,ValueError) as error:
+            if navigation is not None and not self.stop.is_set():
+                self.emit('classic_preview',navigation,None)
+            self.emit('done',f'Classic preview: {error}')
 
     def load_zone_roads(self):
         self.roads=[];self.road_curves=[];self.pen.reset();self.road_draft=[];self.road_load_error=''
@@ -528,6 +563,8 @@ class App:
             'destination':'Click to travel. Wheel up over a zone to open it; wheel down to zoom out. Right-drag to pan. Connect once; trips refresh your position.',
             'route':'Click near your player marker, then click to add vertices. Double-click to finish; press Start route to travel.'}
         self.status.set(self.road_load_error or messages[self.mode])
+        if self.mode=='route' and self.classic_preview_available():
+            self.status.set('Draw your guide on the zone map and double-click to check it against the Classic mesh.')
         if self.mode=='pen' and not self.atlas_browser.active: self.pen_tools.pack(fill='x',before=self.map_tools)
         else: self.pen_tools.pack_forget()
         self.render()
@@ -1129,11 +1166,12 @@ class App:
                 self.status.set('Arrow calibrated. Click near the arrow, then add vertices along walkable roads. Double-click to finish.')
         else:
             if not self.drawing:
-                if self.center is None or self.tip is None:
+                offline_classic=self.classic_preview_available()
+                if not offline_classic and (self.center is None or self.tip is None):
                     self.status.set('Calibrate the arrow before drawing a route.');return
-                if distance(p, self.center) > 15:
+                if not offline_classic and distance(p, self.center) > 15:
                     self.status.set('Start the drawing within 15 map pixels of the calibrated player arrow.');return
-                self.points=[self.center];self.drawing=True
+                self.points=[p if offline_classic else self.center];self.drawing=True
                 self.world_destination=None
                 self.road_destination=self.road_journey=None;self.planned=None
             if distance(p,self.points[-1])>1e-6: self.points.append(p)
@@ -1205,7 +1243,7 @@ class App:
         transform = (1/self.scale,0,-self.offset[0]/self.scale,0,1/self.scale,-self.offset[1]/self.scale)
         visible = Image.fromarray(surface).transform((cw,ch),Image.Transform.AFFINE,transform,
                                                      resample=Image.Resampling.BILINEAR,fillcolor='#17212b')
-        if self.addon_map_id and self.navigation:
+        if self.navigation and (self.addon_map_id or self.classic_preview_available()):
             ground_transform=tuple(v*self.navigation.overlay_scale for v in transform)
             ground=Image.fromarray(self.navigation.overlay).transform((cw,ch),Image.Transform.AFFINE,ground_transform,
                 resample=Image.Resampling.NEAREST)
@@ -1246,7 +1284,8 @@ class App:
                 self.canvas.create_oval(x-4,y-4,x+4,y+4,fill='#a8c8ff',outline='')
                 self.canvas.create_text(x+8,y-12,anchor='w',text=label,fill='#d4e5ff')
         if len(self.points) > 1:
-            if self.addon_map_id:
+            checks_ground = self.addon_map_id or self.classic_preview_available()
+            if checks_ground:
                 drawn = self.planned.pixels if self.planned else self.points
                 if self.planned:
                     guide=[v for p in self.points for v in xy(p)]
@@ -1255,7 +1294,7 @@ class App:
                 drawn=self.points
             coords = [v for p in drawn for v in xy(p)]
             if len(coords)>=4:
-                self.canvas.create_line(*coords, fill='#29edca' if self.planned or not self.addon_map_id else '#ed9e64', width=3, arrow='last')
+                self.canvas.create_line(*coords, fill='#29edca' if self.planned or not checks_ground else '#ed9e64', width=3, arrow='last')
         if self.drawing and self.mode in ('roads','route'):
             vertices=self.road_draft if self.mode=='roads' else self.points
             transform=surface_xy if self.mode=='roads' else xy
@@ -1286,6 +1325,9 @@ class App:
 
     def save(self):
         if self.reference is None:
+            return
+        if self.classic_preview_available():
+            self.status.set('Classic collision previews are temporary. Use Draw roads to save your line.')
             return
         path = filedialog.asksaveasfilename(defaultextension='.route.json', filetypes=[('Route', '*.route.json')])
         if not path:
@@ -1395,6 +1437,9 @@ class App:
 
     def start(self, movement, measure=False):
         if self.busy():
+            return
+        if self.classic_preview_available():
+            self.status.set('Classic preview is offline. Choose Draw trip to check a route on the map.')
             return
         if self.drawing and self.mode in ('roads','route'):
             self.status.set('Double-click to finish the path before starting.');return
@@ -2025,6 +2070,10 @@ class App:
                     self.apply_addon(*values)
                 elif kind == 'continent_ready':
                     self.apply_continent_ready(*values)
+                elif kind == 'classic_preview':
+                    self.navigation,self.planned=values
+                    self.nav_label.configure(text=f'{len(self.navigation.tiles)} Classic ground tiles')
+                    self.render()
                 elif kind == 'acquired':
                     self.apply_acquisition(*values)
                 elif kind == 'frame':

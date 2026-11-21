@@ -7,6 +7,7 @@ from zone_maps import MapCatalog
 
 ROOT = Path(__file__).resolve().parent
 PREFERENCE = ROOT / 'map-profile.local.json'
+LOCAL_CLASSIC = Path('client-data.local/classic-1.12')
 
 
 def identity(catalog):
@@ -22,9 +23,21 @@ def label(catalog):
     return f'{version} maps'
 
 
+def classic_catalog(root=None):
+    root = Path(root or ROOT)
+    local = root / LOCAL_CLASSIC
+    if (local / 'atlas.json').is_file() and (local / 'catalog.json').is_file():
+        return MapCatalog(local)
+    return MapCatalog(root / 'assets/maps')
+
+
+def has_classic_install(catalog):
+    return catalog.profile is None and catalog.root == ROOT / LOCAL_CLASSIC
+
+
 def available_catalogs(root=None, current=None):
     root = Path(root or ROOT)
-    legacy = MapCatalog(root / 'assets/maps')
+    legacy = classic_catalog(root)
     selected = {}
     if all((legacy.root / zone['file']).is_file() for zone in legacy.zones):
         selected[identity(legacy)] = legacy
@@ -54,7 +67,7 @@ def available_catalogs(root=None, current=None):
 def startup_catalog(root=None, preference=None):
     catalogs = available_catalogs(root)
     if not catalogs:
-        raise ValueError('No maps are ready. Run Setup Route Me.cmd to import maps from WoW: Forever.')
+        raise ValueError('No maps are ready. Run Setup Route Me.cmd for Forever or Setup Classic 1.12.cmd.')
     try:
         choice = json.loads(Path(preference or PREFERENCE).read_text(encoding='utf-8'))['profile_id']
         remembered = next((c for c in catalogs if identity(c) == choice), None)

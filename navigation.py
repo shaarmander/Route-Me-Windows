@@ -21,7 +21,8 @@ from core import distance, resample, travel_corners
 
 ROOT = Path(__file__).resolve().parent
 DEFAULT_DATA = Path(r'C:\World of Warcraft Classic')
-NAV_DLL = ROOT/'native/build/Release/route_nav_3.dll'
+PACKAGED_NAV_DLL = ROOT/'runtime/route_nav_3.dll'
+NAV_DLL = PACKAGED_NAV_DLL if PACKAGED_NAV_DLL.is_file() else ROOT/'native/build/Release/route_nav_3.dll'
 CITIES = {1497, 1537, 1519, 1637, 1638, 1657}
 # Tiles already include character-radius clearance. This is only the minimum
 # additional numerical/steering buffer; open ground still prefers 0.8 yard.
@@ -377,6 +378,16 @@ class ZoneNavigation:
         start,_=self.validate_packet(packet)
         if distance(self.transform.world(points[0],start[2]),start)>3:
             raise NavigationError('Draw from your current marker (within 3 yards).')
+        return self._plan_from_ground(points,start)
+
+    def plan_from_map(self, points):
+        t=self.transform
+        if len(points)<2 or any(not (0<=x<=t.width and 0<=y<=t.height) for x,y in points):
+            raise NavigationError('Draw at least two points inside the zone map.')
+        start=self.engine.infer_ground(t.world(points[0],0.))
+        return self._plan_from_ground(points,start)
+
+    def _plan_from_ground(self, points, start):
         # Remove sub-yard hand jitter, independent of map scale or UI zoom.
         guides=simplify_ordered(points,tolerance=.5/self.transform.yards_per_pixel)
         anchors=resample(guides,spacing=24/self.transform.yards_per_pixel)

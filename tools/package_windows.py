@@ -14,12 +14,14 @@ SOURCE = (
     'road_curves.py', 'road_editor.py', 'road_network.py', 'settings.py',
     'telemetry.py', 'tracking.py', 'viewport.py', 'win_input.py', 'zone_maps.py',
     'requirements.txt', 'requirements-forever.txt', 'run.ps1', 'setup.ps1', 'Launch Route Me.cmd',
-    'Setup Route Me.cmd', 'Install Start Menu.ps1',
+    'Setup Route Me.cmd', 'Setup Classic 1.12.cmd', 'setup-classic.ps1', 'Install Start Menu.ps1',
+    'Build Navigation.ps1', 'native/CMakeLists.txt', 'native/route_nav.cpp', 'native/DETOUR_LICENSE.txt',
     'addon/Wayfinder/Wayfinder.lua', 'addon/Wayfinder/Wayfinder.toc',
     'addon/Wayfinder/PROTOCOL.md', 'assets/maps/atlas.json', 'assets/maps/catalog.json',
     'tools/Db2Export/Db2Export.csproj', 'tools/Db2Export/Program.cs',
-    'tools/build_client_map_profile.py', 'tools/extract_client_assets.py',
-    'tools/migrate_client_roads.py', 'tools/setup_forever.py', 'tools/package_windows.py',
+    'tools/build_client_map_profile.py', 'tools/extract_client_assets.py', 'tools/build_atlas.py',
+    'tools/migrate_client_roads.py', 'tools/setup_forever.py', 'tools/setup_classic.py',
+    'tools/package_windows.py', 'CLASSIC_SETUP.md',
 )
 
 
@@ -33,6 +35,7 @@ def package(stage, archive, dotnet_runtime, notices):
     inputs.update({
         'runtime/CascLib.dll': ROOT / 'dist/build/casc/Release/CascLib.dll',
         'runtime/Db2Export.exe': ROOT / 'dist/build/db2-export/Db2Export.exe',
+        'runtime/route_nav_3.dll': ROOT / 'dist/build/classic-adapter/Release/route_nav_3.dll',
         'licenses/CascLib.txt': deps / 'CascLib-3.0/LICENSE',
         'licenses/DBCD.txt': deps / 'DBCD-e732093f8864240fc5884bd1bba6b02f3dfc0d56/LICENSE',
         'licenses/DotNet.txt': dotnet_runtime / 'LICENSE.TXT',

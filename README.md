@@ -7,6 +7,8 @@ Forever 1.60.1.70959. It supports 50 zone and city maps plus three overviews.
 
 [Download Route Me for Windows x64](https://github.com/shaarmander/Route-Me-Windows/releases/latest)
 
+For the original **WoW 1.12.1** client, follow the [Classic collision setup](CLASSIC_SETUP.md).
+
 ## Install
 
 1. Install WoW: Forever through Battle.net and launch it once.

@@ -12,6 +12,12 @@
   [Definitions source](https://github.com/wowdev/WoWDBDefs/tree/005c13a9a101e64014eeb02af3a42ccbeaf8513d/definitions)
 - Microsoft .NET Runtime 10.0.9, bundled in Db2Export.exe.
   [Runtime package and license](https://www.nuget.org/packages/Microsoft.NETCore.App.Runtime.win-x64/10.0.9)
+- Recast Navigation 1.6.0 Detour, linked into `route_nav_3.dll` with 64-bit
+  polygon references. The license is included in `native/DETOUR_LICENSE.txt`.
+  [Recast Navigation source](https://github.com/recastnavigation/recastnavigation/tree/v1.6.0)
 
 Setup retrieves Python packages from PyPI and builds the atlas from the installed
-WoW client. The ZIP contains only atlas metadata and extraction code.
+WoW client. Classic setup downloads its mesh generators directly from the pinned
+[CMaNGOS Classic release](https://github.com/cmangos/mangos-classic/releases/download/latest/mangos-classic-with-all-28a26c38.zip).
+The package includes the native adapters and atlas metadata. Game artwork and
+generated meshes are created on the user's PC.

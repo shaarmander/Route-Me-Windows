@@ -9,6 +9,7 @@ import shutil
 from pathlib import Path
 
 from atlas import Atlas
+from map_profiles import classic_catalog
 from road_network import RoadStore
 from zone_maps import MapCatalog
 
@@ -16,7 +17,7 @@ ROOT=Path(__file__).resolve().parents[1]
 
 
 def migrate(profile_root, source_root=None, previous_profile=None):
-    legacy=Atlas(MapCatalog(ROOT/'assets/maps'))
+    legacy=Atlas(classic_catalog())
     current=Atlas(MapCatalog(profile_root))
     if not current.catalog.profile:
         raise ValueError('Select a client map profile.')
